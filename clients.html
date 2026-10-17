@@ -1,0 +1,478 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>客户端教程大全｜Windows·macOS·iOS·Android 配置指引｜机场推荐</title>
+  <meta name="description" content="全平台客户端配置教程：Windows (Clash Verge/v2rayN)、macOS (ClashX/TUN模式)、iOS (Shadowrocket小火箭/Stash) 与 Android (Clash Meta/v2rayNG) 订阅导入、规则分流与断流排查指南。">
+  <meta name="keywords" content="客户端教程, Clash Verge教程, Shadowrocket教程, 小火箭配置, v2rayN教程, 科学上网客户端">
+  <link rel="canonical" href="https://jichang-tuijian.cc/clients.html">
+  
+  <!-- GEO Meta Tags -->
+  <meta name="geo.region" content="HK">
+  <meta name="geo.placename" content="Hong Kong">
+  <meta name="geo.position" content="22.3193;114.1694">
+  <meta name="ICBM" content="22.3193, 114.1694">
+
+  <!-- Open Graph & Social Cards -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="机场推荐">
+  <meta property="og:title" content="客户端教程大全｜Windows·macOS·iOS·Android 配置指引">
+  <meta property="og:description" content="四大主流平台客户端下载、订阅导入、分流规则设置与故障排障指引。">
+  <meta property="og:url" content="https://jichang-tuijian.cc/clients.html">
+  <meta property="og:image" content="https://jichang-tuijian.cc/assets/logo-icon.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="客户端教程大全｜机场推荐">
+  <meta name="twitter:description" content="四大平台配置指引与故障排障。">
+  <meta name="twitter:image" content="https://jichang-tuijian.cc/assets/logo-icon.png">
+
+  <!-- Breadcrumb Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "首页",
+        "item": "https://jichang-tuijian.cc/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "客户端教程",
+        "item": "https://jichang-tuijian.cc/clients.html"
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="assets/styles.css">
+  <link rel="stylesheet" href="assets/review.css">
+</head>
+<body data-page="clients">
+  <a class="skip-link" href="#main">跳到主要内容</a>
+
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="brand" href="index.html" aria-label="机场推荐首页">
+        <span class="brand-mark"><img class="brand-icon" src="assets/logo-icon.png" alt="机场推荐 Logo" width="27" height="20"></span>
+        <span class="brand-copy"><strong>机场推荐</strong><small>AIRPORT RECOMMEND</small></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">菜单</button>
+      <nav class="site-nav" id="site-nav" aria-label="主导航">
+        <a data-page="recommend" href="recommend.html">机场推荐</a>
+        <a data-page="reviews" href="reviews.html">机场评测</a>
+        <a data-page="compare" href="compare.html">机场对比</a>
+        <a data-page="coupons" href="coupons.html">机场优惠码</a>
+        <a data-page="clients" href="clients.html">客户端教程</a>
+        <a data-page="scenarios" href="scenarios.html">场景应用</a>
+        <a data-page="routes" href="routes.html">技术线路</a>
+        <a data-page="pitfalls" href="pitfalls.html">避坑指南</a>
+        <a data-page="ai-tools" href="ai-tools.html">AI工具</a>
+        <a data-page="about" href="about.html">关于</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero Section -->
+    <section class="page-hero">
+      <div class="container">
+        <div class="breadcrumbs"><a href="index.html">首页</a> / 客户端教程</div>
+        <p class="eyebrow">Cross-Platform Client Manual · 2026</p>
+        <h1>全平台客户端配置与使用教程</h1>
+        <p class="intro">涵盖 Windows、macOS、iOS (iPhone/iPad) 与 Android 四大平台的专业客户端配置流程。从正版下载安装、订阅链接导入、国内外分流规则设置（绕过大陆直连），到 TUN 虚拟网卡模式与常见断流故障排查，让配置不再靠猜。</p>
+        <div class="button-row" style="margin-top:20px">
+          <a class="button" href="#windows">💻 Windows 客户端</a>
+          <a class="button" href="#macos">🍎 macOS 客户端</a>
+          <a class="button ghost" href="#ios">📱 iPhone / iPad</a>
+          <a class="button ghost" href="#android">🤖 Android 客户端</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Choose Your Device (Matching User's Screenshot Exactly with Interactive Jump Links) -->
+    <section class="section alt" id="device-selection">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Choose your device</p>
+            <h2>按设备查找</h2>
+          </div>
+          <p>点击下方卡片可快速跳转至对应系统的图文配置步骤与疑难解答专栏。</p>
+        </div>
+
+        <div class="client-device-grid">
+          <!-- Windows Card -->
+          <a class="client-device-card" href="#windows">
+            <div>
+              <span class="device-meta">Windows</span>
+              <h3>Windows 客户端</h3>
+              <p>安装、导入订阅、系统代理、TUN 模式与常见权限问题。</p>
+            </div>
+            <span class="device-link">查看电脑使用教程 ↓</span>
+          </a>
+
+          <!-- macOS Card -->
+          <a class="client-device-card" href="#macos">
+            <div>
+              <span class="device-meta">macOS</span>
+              <h3>macOS 客户端</h3>
+              <p>芯片版本选择、系统扩展授权、菜单栏操作与分流设置。</p>
+            </div>
+            <span class="device-link">查看苹果电脑教程 ↓</span>
+          </a>
+
+          <!-- iOS Card -->
+          <a class="client-device-card" href="#ios">
+            <div>
+              <span class="device-meta">iOS / iPadOS</span>
+              <h3>iPhone 与 iPad</h3>
+              <p>账号地区、客户端选择、订阅导入与按需连接。</p>
+            </div>
+            <span class="device-link">查看小火箭与 Stash 教程 ↓</span>
+          </a>
+
+          <!-- Android Card -->
+          <a class="client-device-card" href="#android">
+            <div>
+              <span class="device-meta">Android</span>
+              <h3>Android 客户端</h3>
+              <p>应用安装、后台保活、VPN 权限和局域网访问排查。</p>
+            </div>
+            <span class="device-link">查看安卓客户端教程 ↓</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content Section -->
+    <section class="section">
+      <div class="container page-layout">
+        <div style="min-width:0">
+
+          <!-- 01: Windows Platform Tutorial -->
+          <article class="platform-guide-block" id="windows">
+            <header class="platform-guide-header">
+              <div class="platform-title-group">
+                <span class="platform-avatar-badge">💻</span>
+                <div>
+                  <h2>Windows 客户端配置指南</h2>
+                  <small>适用于 Windows 10 / Windows 11 (64位与ARM架构)</small>
+                </div>
+              </div>
+              <div class="software-chips-row">
+                <span class="software-chip-label">推荐软件：</span>
+                <span class="software-chip-tag primary">Clash Verge Rev (首选)</span>
+                <span class="software-chip-tag">v2rayN</span>
+                <span class="software-chip-tag">Sing-box</span>
+              </div>
+            </header>
+
+            <p style="font-size:14px;color:#5c3f2b;line-height:1.75;margin:0 0 16px">
+              在 Windows 系统上，目前最稳定且现代化的代理客户端首选 <strong>Clash Verge Rev</strong>（基于开源内核），支持原生暗黑模式、TUN 虚拟网卡全流量接管，并具备极低内存占用。
+            </p>
+
+            <div class="tutorial-step-grid">
+              <div class="tutorial-step-card">
+                <div>
+                  <span class="step-number">STEP 01</span>
+                  <h4>下载与安装</h4>
+                  <p>从 GitHub Release 或对应机场下载中心获取 <code>x64-setup.exe</code> 安装包。运行安装并勾选开机启动。</p>
+                </div>
+              </div>
+              <div class="tutorial-step-card">
+                <div>
+                  <span class="step-number">STEP 02</span>
+                  <h4>导入订阅链接</h4>
+                  <p>登录机场后台复制 Clash 订阅 URL。在 Verge 侧栏进入【订阅 (Profiles)】，粘贴地址并点击【导入 (Import)】。</p>
+                </div>
+              </div>
+              <div class="tutorial-step-card">
+                <div>
+                  <span class="step-number">STEP 03</span>
+                  <h4>开启代理与 TUN</h4>
+                  <p>在设置中开启【系统代理】。若玩外服游戏或让命令行/UWP走代理，点击安装服务模式并开启【TUN 模式】。</p>
+                </div>
+              </div>
+              <div class="tutorial-step-card">
+                <div>
+                  <span class="step-number">STEP 04</span>
+                  <h4>规则分流模式</h4>
+                  <p>在【代理】界面将路由模式选为【规则 (Rule)】，点击延迟测试按钮选低延迟节点，国内直连、国外专线加速。</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="client-troubleshoot-box">
+              <h4>⚠️ Windows 常见故障排查：</h4>
+              <ul>
+                <li><strong>关闭软件后电脑无法上网：</strong> 这是由于退出时系统代理注册表未被注销。在 Windows 设置 > 网络和 Internet > 代理 中，将“使用代理服务器”手动关闭即可恢复。</li>
+                <li><strong>7890 端口冲突报错：</strong> 本地存在其他代理软件占用了 7890 端口。在设置中将 Mixed Port（混合端口）修改为 7895 或 10809 即可。</li>
+                <li><strong>订阅更新失败提示 403：</strong> 在订阅链接末尾加上 <code>&flag=clash</code>，或在订阅右键菜单中更换 User-Agent 为 <code>clash-verge</code>。</li>
+              </ul>
+            </div>
+            <div style="margin-top:16px;text-align:right">
+              <a href="scenarios.html" style="font-size:13px;color:var(--rust);font-weight:600">查看电脑端远程办公与多设备场景 →</a>
+            </div>
+          </article>
+
+          <!-- 02: macOS Platform Tutorial -->
+          <article class="platform-guide-block" id="macos">
+            <header class="platform-guide-header">
+              <div class="platform-title-group">
+                <span class="platform-avatar-badge">🍎</span>
+                <div>
+                  <h2>macOS 客户端配置指南</h2>
+                  <small>适用于 Apple Silicon (M1/M2/M3/M4) 及 Intel 架构</small>
+                </div>
+              </div>
+              <div class="software-chips-row">
+                <span class="software-chip-label">推荐软件：</span>
+                <span class="software-chip-tag primary">Clash Verge Rev (首选)</span>
+                <span class="software-chip-tag">ClashX Meta</span>
+                <span class="software-chip-tag">Surge Mac</span>
+              </div>
+            </header>
+
+            <p style="font-size:14px;color:#5c3f2b;line-height:1.75;margin:0 0 16px">
+              Mac 用户推荐使用适配 Apple Silicon 的原生客户端，不仅发热量极低，还能通过 Privileged Helper 辅助工具实现全局底层网络接管。
+            </p>
+
+            <div class="tutorial-step-grid">
+              <div class="tutorial-step-card">
+                <div>
+                  <span class="step-number">STEP 01</span>
+                  <h4>架构选择与安装</h4>
+                  <p>苹果 M 系列芯片下载 <code>aarch64.dmg</code>，Intel 芯片下载 <code>x64.dmg</code>。拖拽至 Applications。若提示未受信任，在“安全性与隐私”中点击“仍要打开”。</p>
+                </div>
+              </div>
+              <div class="tutorial-step-card">
+                <div>
+                  <span class="step-number">STEP 02</span>
+                  <h4>授权服务与增强模式</h4>
+                  <p>初次启动进入设置，点击安装【系统扩展服务 (Privileged Helper)】，输入 Mac 开机密码授权，开启高权限虚拟网卡。</p>
+                </div>
+              </div>
+              <div class="tutorial-step-card">
+                <div>
+                  <span class="step-number">STEP 03</span>
+                  <h4>订阅导入与自动更新</h4>
+                  <p>进入【Profiles】，粘贴机场订阅链接保存，并设置自动更新周期为 1440 分钟（24小时），保证节点信息最新。</p>
+                </div>
+              </div>
+              <div class="tutorial-step-card">
+                <div>
+                  <span class="step-number">STEP 04</span>
+                  <h4>智能出境分流</h4>
+                  <p>在菜单栏图标中选择【出境规则模式 (Rule)】，系统自动根据目标域名选择最优直连或代理线路，不影响日常微信/B站。</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="client-troubleshoot-box">
+              <h4>⚠️ macOS 常见故障排查：</h4>
+              <ul>
+                <li><strong>Mac 休眠唤醒后断流：</strong> 系统休眠后网络接口被重置，在设置中勾选“网络断开时自动重启核心”；或在菜单栏快速关闭再打开系统代理。</li>
+                <li><strong>终端 Terminal 无法连接海外：</strong> 终端不默认走 GUI 代理，可输入命令配置临时环境变量：<code>export https_proxy=http://127.0.0.1:7890</code>。</li>
+                <li><strong>Safari 提示证书不安全：</strong> 检查客户端的 MitM（中间人解密）或本地 DNS 设置，通常关闭不必要的主机覆写即可恢复正常。</li>
+              </ul>
+            </div>
+            <div style="margin-top:16px;text-align:right">
+              <a href="routes.html" style="font-size:13px;color:var(--rust);font-weight:600">深入了解规则分流与线路技术 →</a>
+            </div>
+          </article>
+
+          <!-- 03: iOS Platform Tutorial -->
+          <article class="platform-guide-block" id="ios">
+            <header class="platform-guide-header">
+              <div class="platform-title-group">
+                <span class="platform-avatar-badge">📱</span>
+                <div>
+                  <h2>iPhone 与 iPad (iOS) 配置指南</h2>
+                  <small>适用于 iOS 15 / 16 / 17 / 18 及 iPadOS 系统</small>
+                </div>
+              </div>
+              <div class="software-chips-row">
+                <span class="software-chip-label">推荐软件：</span>
+                <span class="software-chip-tag primary">Shadowrocket (小火箭)</span>
+                <span class="software-chip-tag">Stash</span>
+                <span class="software-chip-tag">Quantumult X</span>
+              </div>
+            </header>
+
+            <p style="font-size:14px;color:#5c3f2b;line-height:1.75;margin:0 0 16px">
+              iOS 平台的网络加速客户端需要在<strong>非国区（美区/港区/日区）App Store</strong> 中下载，最为经典、易用且生态完备的首推 <strong>Shadowrocket (小火箭)</strong>。
+            </p>
+
+            <div class="tutorial-step-grid">
+              <div class="tutorial-step-card">
+                <div>
+                  <span class="step-number">STEP 01</span>
+                  <h4>获取海外 ID 下载</h4>
+                  <p>在 App Store 登录美区或港区 Apple ID 购买下载小火箭。<strong style="color:var(--rust)">特别警告：切勿在系统【设置-iCloud】中登录他人账号！</strong></p>
+                </div>
+              </div>
+              <div class="tutorial-step-card">
+                <div>
+                  <span class="step-number">STEP 02</span>
+                  <h4>一键导入订阅</h4>
+                  <p>Safari 打开机场后台，点击【一键导入小火箭】自动拉起应用；或在右上角点【+】，类型选 <code>Subscribe</code> 粘贴链接。</p>
+                </div>
+              </div>
+              <div class="tutorial-step-card">
+                <div>
+                  <span class="step-number">STEP 03</span>
+                  <h4>授权添加 VPN 配置</h4>
+                  <p>首次滑动顶部连接开关时，系统弹出“添加 VPN 配置”窗口，点击【允许】并输入 iPhone 锁屏密码或通过 Face ID 验证。</p>
+                </div>
+              </div>
+              <div class="tutorial-step-card">
+                <div>
+                  <span class="step-number">STEP 04</span>
+                  <h4>全局路由选择“配置”</h4>
+                  <p>在小火箭首页将【全局路由】选为【配置 (Config)】，千万不要选全局代理，避免微信等国内应用消耗专线流量。</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="client-troubleshoot-box">
+              <h4>⚠️ iOS 常见故障排查：</h4>
+              <ul>
+                <li><strong>所有节点全部变红 Timeout：</strong> 90% 的原因是手机系统时间不准确。在 iPhone 设置 > 通用 > 日期与时间 中开启“自动设置”，偏差超 60 秒会导致 TLS 握手失败。</li>
+                <li><strong>订阅更新失败返回 404/500：</strong> 机场订阅链接可能已重置。回到机场后台重新复制最新的订阅链接，并在小火箭中下拉列表手动刷新。</li>
+                <li><strong>需要开启全天候免看护：</strong> 在小火箭设置中开启【按需连接 (On Demand)】，可在离开 Wi-Fi 切换到 5G 移动蜂窝网络时自动无缝保持连接。</li>
+              </ul>
+            </div>
+            <div style="margin-top:16px;text-align:right">
+              <a href="pitfalls.html" style="font-size:13px;color:var(--rust);font-weight:600">查阅 Apple ID 安全防锁机避坑提醒 →</a>
+            </div>
+          </article>
+
+          <!-- 04: Android Platform Tutorial -->
+          <article class="platform-guide-block" id="android">
+            <header class="platform-guide-header">
+              <div class="platform-title-group">
+                <span class="platform-avatar-badge">🤖</span>
+                <div>
+                  <h2>Android 客户端配置指南</h2>
+                  <small>适用于 小米 MIUI/HyperOS、华为鸿蒙、OPPO、vivo 及 原生安卓系统</small>
+                </div>
+              </div>
+              <div class="software-chips-row">
+                <span class="software-chip-label">推荐软件：</span>
+                <span class="software-chip-tag primary">Clash Meta for Android</span>
+                <span class="software-chip-tag">v2rayNG</span>
+                <span class="software-chip-tag">Surfboard</span>
+              </div>
+            </header>
+
+            <p style="font-size:14px;color:#5c3f2b;line-height:1.75;margin:0 0 16px">
+              Android 平台生态自由度高，推荐安装基于 Clash Meta 内核的 <strong>Clash Meta for Android (CMFA)</strong> 或 <strong>v2rayNG</strong>，完全免费开源且支持所有新型专线协议。
+            </p>
+
+            <div class="tutorial-step-grid">
+              <div class="tutorial-step-card">
+                <div>
+                  <span class="step-number">STEP 01</span>
+                  <h4>安装与权限授予</h4>
+                  <p>从官方 GitHub Release 或机场下载中心获取 <code>.apk</code> 安装包，安装并允许创建本地 VPN 连接与常驻通知权限。</p>
+                </div>
+              </div>
+              <div class="tutorial-step-card">
+                <div>
+                  <span class="step-number">STEP 02</span>
+                  <h4>导入配置 (Profiles)</h4>
+                  <p>点击主界面【配置 (Profiles)】 > 【新配置】 > 【从 URL 导入】，粘贴机场后台复制的专属订阅链接并点击右上角保存。</p>
+                </div>
+              </div>
+              <div class="tutorial-step-card">
+                <div>
+                  <span class="step-number">STEP 03</span>
+                  <h4>后台保活防杀进程</h4>
+                  <p>在手机系统设置中，将应用省电策略改为【无限制】，开启【允许自启动】与【允许后台活动】，多任务界面锁定卡片。</p>
+                </div>
+              </div>
+              <div class="tutorial-step-card">
+                <div>
+                  <span class="step-number">STEP 04</span>
+                  <h4>开启分流与应用绕行</h4>
+                  <p>在主界面点击【启动】开启连接。在分流模式中确认选为【规则 (Rule)】，可在应用绕行中勾选不走代理的国内应用。</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="client-troubleshoot-box">
+              <h4>⚠️ Android 常见故障排查：</h4>
+              <ul>
+                <li><strong>锁屏后几分钟断流无法接收海外推送：</strong> 国产系统（小米/华为/OPPO）激进清理后台导致进程被杀。务必在系统电池优化中开启“后台保活无限制”，并在任务管理器中下拉“加锁”。</li>
+                <li><strong>连接后国内网页卡死：</strong> 检查路由设置中是否开启了“绕过局域网及大陆地址”规则，避免将国内 CDN 流量通过代理绕行。</li>
+                <li><strong>无法通过手机热点共享代理给 Switch 或电视：</strong> 在设置中开启【允许局域网连接 (Allow LAN)】并记录端口号即可。</li>
+              </ul>
+            </div>
+            <div style="margin-top:16px;text-align:right">
+              <a href="recommend.html" style="font-size:13px;color:var(--rust);font-weight:600">前往 2026 年度精选推荐榜挑选服务 →</a>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Right Sticky Sidebar -->
+        <aside class="sidebar">
+          <div class="side-block">
+            <h2>通用上手 4 步法则</h2>
+            <ul>
+              <li><strong>一、获取订阅</strong>：先在官网注册并复制专属订阅链接</li>
+              <li><strong>二、下载正版</strong>：认准开源发布页，远离来路不明的破解版</li>
+              <li><strong>三、设置规则</strong>：务必使用 Rule 分流模式，不浪费流量</li>
+              <li><strong>四、测试排查</strong>：遇网络异常先测试节点延迟，排除本地断网</li>
+            </ul>
+          </div>
+          <div class="side-block">
+            <h2>决策与横向对比</h2>
+            <ul>
+              <li><a href="recommend.html">🔥 2026 年度精选推荐榜</a></li>
+              <li><a href="compare.html">📊 15 家横向参数大表</a></li>
+              <li><a href="coupons.html">🏷️ 专属优惠码中心</a></li>
+              <li><a href="reviews.html">📖 15 家深度独立评测</a></li>
+              <li><a href="routes.html">⚡ 技术线路知识库</a></li>
+              <li><a href="pitfalls.html">⚠️ 避坑防套路指南</a></li>
+              <li><a href="ai-tools.html">🤖 AI 工具导航</a></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-main">
+        <div>
+          <h2>机场推荐</h2>
+          <p>把每一步写清楚，让配置不再靠猜。从客户端选择到系统底层网络接管，提供客观可靠的使用指引。</p>
+        </div>
+        <nav class="footer-links" aria-label="页脚导航">
+          <a href="index.html">返回首页</a>
+          <a href="recommend.html">机场推荐</a>
+          <a href="reviews.html">机场评测</a>
+          <a href="compare.html">机场对比</a>
+          <a href="coupons.html">机场优惠码</a>
+          <a href="routes.html">技术线路</a>
+          <a href="pitfalls.html">避坑指南</a>
+          <a href="sitemap.html">网站地图</a>
+          <a href="about.html">关于本站</a>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span data-year></span> 机场推荐</span>
+        <span>Cross-Platform Client Manual Archive</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/site.js"></script>
+</body>
+</html>
