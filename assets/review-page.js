@@ -125,7 +125,7 @@ function renderReviewArticle() {
             <h4 class="box-title">理性消费准则</h4>
             <div class="sidebar-links">
               <a href="coupons.html">🏷️ 优惠折扣专区</a>
-              <a href="compare.html">📊 15 家横向对比</a>
+              <a href="compare.html">📊 16 家横向对比</a>
               <a href="pitfalls.html">⚠️ 避坑预警清单</a>
             </div>
           </div>
@@ -301,7 +301,7 @@ function renderReviewArticle() {
             <strong>${previous.name}</strong>
           </a>
           <a class="nav-back-list" href="reviews.html">
-            15 家评测目录
+            16 家评测目录
           </a>
           <a class="nav-card next" href="review.html?id=${next.id}">
             <span>下一家评测 →</span>
@@ -316,7 +316,7 @@ function renderReviewArticle() {
               <p class="eyebrow" style="margin:0">More Field Tests</p>
               <h2 style="font-size:22px;margin:4px 0 0">更多机场独立评测</h2>
             </div>
-            <a href="reviews.html" style="color:var(--rust);font-size:13.5px;font-weight:600">全部 15 家 ↗</a>
+            <a href="reviews.html" style="color:var(--rust);font-size:13.5px;font-weight:600">全部 16 家 ↗</a>
           </div>
           <div class="related-reviews-grid">
             ${relatedHtml}
@@ -331,7 +331,7 @@ function renderReviewArticle() {
             <h4 class="box-title">站内快捷导航</h4>
             <div class="sidebar-links">
               <a href="recommend.html"><span>🔥 机场推荐榜</span><i>→</i></a>
-              <a href="compare.html"><span>📊 15家横向对比</span><i>→</i></a>
+              <a href="compare.html"><span>📊 16家横向对比</span><i>→</i></a>
               <a href="coupons.html"><span>🏷️ 优惠折扣中心</span><i>→</i></a>
               <a href="clients.html"><span>📖 客户端配置</span><i>→</i></a>
               <a href="routes.html"><span>⚡ 专线技术知识</span><i>→</i></a>
